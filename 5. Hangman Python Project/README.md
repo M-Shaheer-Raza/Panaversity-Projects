@@ -19,34 +19,30 @@ The **Hangman Python Project** is a word-guessing game where the player tries to
 
 ### **Project Structure**  
 ```
-Project_5_Hangman/
+Hangman_Python_Project/
 │── hangman.py   # Main script
+│── words.py     # Word list for the game
+│── hangman_visual.py # Visual representation of the hangman figure
 │── README.md    # Project documentation
 ```
 
 ### **Code Explanation**  
-- **`choose_word(word_list)`** → Selects a random word from the list.  
-- **`display_current_state(secret_word, guessed_letters)`** → Displays the word with guessed letters and underscores.  
-- **`get_user_guess(used_letters)`** → Gets and validates user input.  
-- **`play_hangman()`** → Main game function that runs one round of Hangman.  
-- **`main()`** → Allows the user to play multiple rounds.  
+- **`get_valid_word(words)`** → Selects a random word from the list of words.  
+- **`hangman()`** → Main game function that runs one round of Hangman.  
+- **`lives_visual_dict`** → A dictionary containing visual representations of the hangman for each stage of the game.  
+- **`input()`** → Used to prompt the player to guess a letter.  
+- **`while` loop** → Controls the game flow and keeps track of the player's guesses and lives.
 
 ### **Example Output**  
 ```
-Welcome to Hangman!
-Try to guess the secret word, one letter at a time.
-You are allowed 6 incorrect guesses.
-
-Word: _ _ _ _ _ _
-Guess a letter: p
-Good guess!
-
-Word: p _ _ _ _ _
-Guess a letter: z
-Sorry, that letter is not in the word.
-Wrong guesses: z
-Remaining mistakes: 5
-
+You have 7 lives left and you have used these letters:  
+Current word:  _ _ _ _ _ _
+You have 6 lives left and you have used these letters: A
+Current word:  A _ _ _ _ _
+Guess a letter: B
+Your letter, B is not in the word.
+You have 5 lives left and you have used these letters: A B
+Current word:  A _ _ _ _ _
 ...
-Congratulations! You guessed the word: python
+YAY! You guessed the word!
 ```
