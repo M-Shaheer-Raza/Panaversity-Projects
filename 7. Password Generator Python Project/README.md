@@ -1,40 +1,35 @@
 # Password Generator Python Project
 
 ## Description
-The Password Generator is a Python program that creates strong, randomized passwords based on user preferences. Users can specify the password length and choose to include uppercase letters, lowercase letters, digits, and special symbols.
+This Python program generates random, secure passwords based on user input. Users can specify the number of passwords to generate and the desired length for each password. The program ensures that the passwords contain a mix of letters, digits, and special characters.
 
 ## Features
-- User-defined password length
-- Option to include:
-  - Uppercase letters
-  - Lowercase letters
-  - Digits
-  - Special symbols
-- Ensures at least one character type is selected
-- Generates a secure password randomly
+- User-defined number of passwords to generate.
+- Option to set the password length.
+- Generates secure, random passwords with a variety of characters (uppercase, lowercase, digits, and symbols).
+- Input validation to ensure positive integer values for both the number of passwords and the password length.
 
 ## How It Works
-1. The program asks the user for the desired password length.
-2. The user chooses which types of characters to include.
-3. The program generates a password with random characters from the selected categories.
-4. The password is displayed on the screen.
+1. The program asks the user for the number of passwords to generate and the desired length.
+2. It validates that both inputs are positive integers.
+3. It generates the specified number of passwords, each with the specified length.
+4. The generated passwords are displayed to the user.
 
 ## Project Structure
 ```
 Password-Generator/
 │── password_generator.py  # Main script
-│── README.md              # Project documentation
+│── README.md             # Project documentation
 ```
 
 ## Example Output
 ```
 Welcome to the Password Generator!
-Enter the desired password length (positive integer): 12
-Include uppercase letters? (yes/no): yes
-Include lowercase letters? (yes/no): yes
-Include digits? (yes/no): yes
-Include special symbols? (yes/no): no
+Amount of passwords to generate: 3
+Enter your password length: 8
 
-Generated Password:
-G8rTpM2yXqkL
+Here are your passwords:
+aG9r#8yA
+zZ!1kLwP
+E5a@NxQ8
 ```

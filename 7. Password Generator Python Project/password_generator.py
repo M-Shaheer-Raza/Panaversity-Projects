@@ -1,46 +1,34 @@
 import random
-import string
 
-def get_password_options():
-    while True:
-        try:
-            length = int(input("Enter the desired password length (positive integer): "))
-            if length > 0:
-                break
-            print("Password length must be a positive integer.")
-        except ValueError:
-            print("Invalid input. Please enter a valid number.")
+def generate_passwords(number, length):
+    chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*().,"
+    passwords = []
 
-    include_uppercase = input("Include uppercase letters? (yes/no): ").strip().lower() in ['yes', 'y']
-    include_lowercase = input("Include lowercase letters? (yes/no): ").strip().lower() in ['yes', 'y']
-    include_digits = input("Include digits? (yes/no): ").strip().lower() in ['yes', 'y']
-    include_symbols = input("Include special symbols? (yes/no): ").strip().lower() in ['yes', 'y']
+    for pwd in range(number):
+        password = ''
+        for c in range(length):
+            password += random.choice(chars)
+        passwords.append(password)
 
-    if not (include_uppercase or include_lowercase or include_digits or include_symbols):
-        print("You must select at least one character type. Let's try again.\n")
-        return get_password_options()
+    return passwords
 
-    return length, include_uppercase, include_lowercase, include_digits, include_symbols
-
-def generate_password(length, include_uppercase, include_lowercase, include_digits, include_symbols):
-    character_pool = ""
-    if include_uppercase:
-        character_pool += string.ascii_uppercase
-    if include_lowercase:
-        character_pool += string.ascii_lowercase
-    if include_digits:
-        character_pool += string.digits
-    if include_symbols:
-        character_pool += string.punctuation
-
-    return ''.join(random.choice(character_pool) for _ in range(length))
-
-def main():
-    print("Welcome to the Password Generator!")
-    length, include_uppercase, include_lowercase, include_digits, include_symbols = get_password_options()
-    password = generate_password(length, include_uppercase, include_lowercase, include_digits, include_symbols)
-    print("\nGenerated Password:")
-    print(password)
 
 if __name__ == "__main__":
-    main()
+    print("Welcome to the Password Generator!")
+    
+    while True:
+        try:
+            number = int(input("Amount of passwords to generate: "))
+            length = int(input("Enter your password length: "))
+            
+            if number <= 0 or length <= 0:
+                print("Error: Please enter a positive number for both password count and length.")
+            else:
+                generated_passwords = generate_passwords(number, length)
+                print("\nHere are your passwords:")
+                for password in generated_passwords:
+                    print(password)
+                break
+        
+        except ValueError:
+            print("Invalid input! Please enter valid integers for the number of passwords and password length.")
