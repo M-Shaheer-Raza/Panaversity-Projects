@@ -1,44 +1,34 @@
 # Countdown Timer Python Project
 
-## Overview
-The **Countdown Timer Python Project** is a simple console-based application that allows users to input a time duration in seconds, and the program will count down until reaching zero. It demonstrates the use of loops, user input handling, time management, and system commands to clear the console.
+## Description
+The Countdown Timer is a Python program that allows users to input a countdown duration in seconds. It then counts down from the specified time, displaying the remaining time in `MM:SS` format. Once the time reaches zero, a message is shown indicating that the timer has completed.
 
 ## Features
-- Allows the user to set a countdown timer in seconds
-- Displays the remaining time dynamically
-- Clears the console to provide a clean countdown display
-- Handles invalid user input gracefully
-- Allows manual interruption using `CTRL + C`
+- Accepts user input for the countdown time in seconds.
+- Displays the countdown in `MM:SS` format.
+- Validates input to ensure the entered value is a positive integer.
+- Repeats the prompt until a valid input is provided.
+- Displays "Timer Completed!" when the countdown finishes.
 
-## How to Use
-1. Run the script in a Python environment.
-2. Enter the number of seconds for the countdown.
-3. The timer will start counting down, updating the remaining time every second.
-4. When the countdown reaches zero, a message "Time's up!" is displayed.
-5. To exit early, press `CTRL + C`.
+## How It Works
+1. The program asks the user for the desired countdown time in seconds.
+2. The user is prompted until a valid positive integer is provided.
+3. The countdown starts and the remaining time is displayed in `MM:SS` format.
+4. The program waits for 1 second between each countdown update.
+5. Once the timer reaches zero, the program prints "Timer Completed!" to indicate the end.
 
 ## Project Structure
 ```
-Project_6_Countdown_Timer/
+Countdown-Timer/
 │── countdown_timer.py  # Main script
 │── README.md           # Project documentation
 ```
 
-## Code Explanation
-- **`get_user_time()`**: Prompts the user for a valid countdown duration.
-- **`clear_console()`**: Clears the console for a better user experience.
-- **`countdown_timer(seconds)`**: Performs the countdown and updates the display every second.
-- **`main()`**: Runs the program and handles user input.
-
 ## Example Output
 ```
-Enter the countdown time in seconds: 5
-
-Countdown Timer
-Time remaining: 5 seconds
-Time remaining: 4 seconds
-Time remaining: 3 seconds
-Time remaining: 2 seconds
-Time remaining: 1 second
-Time's up!
+Enter the time in seconds: 120
+02:00
+01:59
+...
+Timer Completed!
 ```
